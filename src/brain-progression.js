@@ -5,29 +5,37 @@ const numbers = () => {
   console.log('What number is missing in the progression?');
 
   for (let i = 0; i < 3; i += 1) {
-    const numberRundom1 = Math.floor(Math.random() * 100); // main
-    const numberRundom2 = Math.floor(Math.random() * 100) + 1; // progress
-    const numberRundom3 = Math.floor(Math.random() * 5) + 4; // length
-    const numberRundom4 = Math.floor(Math.random() * numberRundom3); // ..
-    const example = [numberRundom1];
+    const numberRundom1 = Math.floor(Math.random() * 100) + 2;
+    let realAnswer;
 
-    for (let i2 = 0; i2 <= numberRundom3; i2 += 1) {
-      example.push(example[i2] + numberRundom2);
+    for (let i2 = numberRundom1 - 1; i2 >= 1; i2 -= 1) {
+      if (numberRundom1 % i2 === 0) {
+        realAnswer = i2;
+        break;
+      }
     }
 
-    const realAnswer = example[numberRundom4];
-    example[numberRundom4] = '..';
-    const example2 = example.join(' ');
-    console.log(`Question: ${example2}`);
-    const userAnswer = Number(readlineSync.question('Answer: '));
+    console.log(`Question: ${numberRundom1}`);
+    const userAnswer = (readlineSync.question('Answer: '));
 
-    if (userAnswer === realAnswer) {
+    if (userAnswer === 'yes' && realAnswer === 1) {
       console.log('Correct!');
       if (i === 2) {
         console.log(`Congratulations, ${userName}!`);
       }
+    } else if (userAnswer === 'no' && realAnswer !== 1) {
+      console.log('Correct!');
+      if (i === 2) {
+        console.log(`Congratulations, ${userName}!`);
+      }
+    } else if (userAnswer === 'yes' && realAnswer !== 1) {
+      console.log(`yes is wrong answer ;(. Correct answer was no.\nLet's try again, ${userName}!`);
+      break;
+    } else if (userAnswer === 'no' && realAnswer === 1) {
+      console.log(`no is wrong answer ;(. Correct answer was yes.\nLet's try again, ${userName}!`);
+      break;
     } else {
-      console.log(`${userAnswer} is wrong answer ;(. Correct answer was ${realAnswer}.\nLet's try again, ${userName}!`);
+      console.log(`Let's try again, ${userName}!`);
       break;
     }
   }
