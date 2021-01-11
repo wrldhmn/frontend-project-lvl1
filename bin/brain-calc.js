@@ -20,17 +20,19 @@ const numbers = () => {
         example[i2] = numberRundom2;
       }
     }
+
     const example2 = example.join('');
     const realAnswer = Number(eval(example2));
-    const userAnswer = Number(readlineSync.question(`${example2}=`));
+    console.log(`Question: ${example2}`);
+    const userAnswer = Number(readlineSync.question('Answer: '));
 
     if (userAnswer === realAnswer) {
       console.log('Correct!');
       if (i === 2) {
-        console.log(`Congratulations, ${userName}`);
+        console.log(`Congratulations, ${userName}!`);
       }
     } else {
-      console.log(`${userAnswer} is wrong answer ;(. Correct answer was ${realAnswer}.\nLet's try again, Sam!`);
+      console.log(`${userAnswer} is wrong answer ;(. Correct answer was ${realAnswer}.\nLet's try again, ${userName}!`);
       break;
     }
   }
