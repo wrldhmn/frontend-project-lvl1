@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 import readlineSync from 'readline-sync';
-import greetings from '../src/cli.js';
+import { greetings, userName } from '../src/cli.js';
 
 const numbers = () => {
   console.log('Answer "yes" if the number is even, otherwise answer "no".');
@@ -12,18 +12,18 @@ const numbers = () => {
     if (numberRundom % 2 === 0 && answer === 'yes') {
       console.log('Correct!');
       if (i === 2) {
-        console.log('Congratulations, Bill!');
+        console.log(`Congratulations, ${userName}!`);
       }
     } else if (numberRundom % 2 !== 0 && answer === 'no') {
       console.log('Correct!');
       if (i === 2) {
-        console.log('Congratulations, Bill!');
+        console.log(`Congratulations, ${userName}!`);
       }
     } else if (numberRundom % 2 === 0 && answer === 'no') {
-      console.log("'no' is wrong answer ;(. Correct answer was 'yes'.'\n'Let's try again, Bill!");
+      console.log(`'no' is wrong answer ;(. Correct answer was 'yes'.'\n'Let's try again, ${userName}!`);
       break;
     } else if (numberRundom % 2 !== 0 && answer === 'yes') {
-      console.log("'yes' is wrong answer ;(. Correct answer was 'no'.'\n'Let's try again, Bill!");
+      console.log(`'yes' is wrong answer ;(. Correct answer was 'no'.'\n'Let's try again, ${userName}!`);
       break;
     } else {
       console.log("Only 'yes' or 'no'");
