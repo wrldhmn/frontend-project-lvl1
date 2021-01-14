@@ -10,7 +10,9 @@ const numbers = () => {
 
     if (numberRundom % 2 === 0 && answer === 'yes') {
       console.log('Correct!');
-      i === 2 ? console.log(`Congratulations, ${userName}!`) : 
+      if (i === 2) {
+        console.log(`Congratulations, ${userName}!`);
+      }
     } else if (numberRundom % 2 !== 0 && answer === 'no') {
       console.log('Correct!');
       if (i === 2) {
