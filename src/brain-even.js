@@ -1,5 +1,5 @@
 import readlineSync from 'readline-sync';
-import { greetings, userName } from './cli.js';
+import { userName } from './cli.js';
 
 const numbers = () => {
   console.log('Answer "yes" if the number is even, otherwise answer "no".');
@@ -10,9 +10,7 @@ const numbers = () => {
 
     if (numberRundom % 2 === 0 && answer === 'yes') {
       console.log('Correct!');
-      if (i === 2) {
-        console.log(`Congratulations, ${userName}!`);
-      }
+      i === 2 ? console.log(`Congratulations, ${userName}!`) : 
     } else if (numberRundom % 2 !== 0 && answer === 'no') {
       console.log('Correct!');
       if (i === 2) {
