@@ -6,7 +6,7 @@ const numbers = () => {
     const numberRundom1 = Math.floor(Math.random() * 19) + 1;
     const numberRundom2 = Math.floor(Math.random() * 19) + 1;
 
-    console.log(`Find the greatest common divisor of given numbers.\nQuestion: ${numberRundom1}, ${numberRundom2}`);
+    console.log(`Find the greatest common divisor of given numbers.\nQuestion: ${numberRundom1} ${numberRundom2}`);
     const userAnswer = Number(readlineSync.question('Answer: '));
     const minNumber = Math.min(numberRundom1, numberRundom2);
     let realAnswer;

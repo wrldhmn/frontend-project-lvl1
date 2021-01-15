@@ -21,7 +21,7 @@ const numbers = () => {
       }
     }
 
-    const example2 = example.join('');
+    const example2 = example.join(' ');
     const realAnswer = Number(eval(example2));
     console.log(`Question: ${example2}`);
     const userAnswer = Number(readlineSync.question('Answer: '));
