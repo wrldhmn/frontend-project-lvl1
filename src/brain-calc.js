@@ -22,7 +22,15 @@ const numbers = () => {
     }
 
     const example2 = example.join(' ');
-    const realAnswer = Number(eval(example2));
+    let realAnswer;
+
+    switch (example[1]) {
+      case '+': realAnswer = numberRundom1 + numberRundom2; break;
+      case '-': realAnswer = numberRundom1 - numberRundom2; break;
+      case '*': realAnswer = numberRundom1 * numberRundom2; break;
+      default: break;
+    }
+
     console.log(`Question: ${example2}`);
     const userAnswer = Number(readlineSync.question('Answer: '));
 
